@@ -1,4 +1,8 @@
 import java.lang.Math;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 public class body {
     //required variables
     //parent will be null if body is the sun
@@ -9,6 +13,7 @@ public class body {
     private Double distance;
     private Double velocity;
     private Double radius;
+    public File datafile;
 
     //constructor
     public void createBody(String bodyname, body parentbody, Double relativeangle, Double relativedistance, Double orbitalvelocity, Double bodyradius){
@@ -18,6 +23,10 @@ public class body {
         distance = relativedistance;
         velocity = orbitalvelocity;
         radius = bodyradius;
+    }
+
+    public void createDataFile(String directory){
+        datafile = new File(directory);
     }
 
 
@@ -39,6 +48,9 @@ public class body {
     }
     public Double getRadius(){
         return radius;
+    }
+    public File getDatafile(){
+        return datafile;
     }
 
     public void updateAngle(){
