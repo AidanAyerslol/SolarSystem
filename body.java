@@ -1,4 +1,5 @@
-public abstract class body {
+import java.lang.Math;
+public class body {
     //required variables
     //parent will be null if body is the sun
     //angle, distance, velocity, and radius is 0 if the body is the sun
@@ -39,4 +40,10 @@ public abstract class body {
     public Double getRadius(){
         return radius;
     }
+
+    public void updateAngle(){
+        Double newangle = angle + (Math.PI * 2) / velocity;
+        angle = newangle;
+    }
+
 }
