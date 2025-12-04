@@ -77,6 +77,22 @@ public class main {
                 body ProbeCannon =  new body();
             body DarkBramble =  new body();
             //I don't think I can even explain this one, but it is SUPER cool
+
+        //Measurements are in meters (1:1) because the solar system is very scaled down
+        //orbital velocity is the time in seconds (1:1) using a universal time scale instead of a planet specific one since you will likely be travelling planets frequently in the game
+        Sun.createBody("Sun", null, 0.0, 0.0, 0.0, 2000.0);
+        HourGlassTwinsOrbit.createBody("HourGlassTwinsOrbit", Sun, 0.0, 5000.0, 110.76, 0.0);
+        AshTwin.createBody("AshTwin", HourGlassTwinsOrbit, 0.0, 250.0, 55.0, 169.0);
+        EmberTwin.createBody("EmberTwin", HourGlassTwinsOrbit, 3.1415, 250.0, 55.0, 170.0); //angle should be opposite the center so it doesnt overlap the other twin
+        TimberHearth.createBody("TimberHearth", Sun, 0.0, 8593.086, 250.25, 254.0);
+        Attlerock.createBody("Attlerock", TimberHearth, 0.0, 900.0, 105.0, 80.0);
+        BrittleHollow.createBody("BrittleHollow", Sun, 0.0, 11690.891, 397.94, 272.0);
+        HollowsLantern.createBody("HollowsLantern", BrittleHollow, 0.0, 1000.0, 115.0, 97.3);
+        GiantsDeep.createBody("GiantsDeep", Sun, 0.0, 16457.587, 650.0, 500.0);
+        ProbeCannon.createBody("ProbeCannon", GiantsDeep, 0.0, 1000.0, 50.0, 15.0);
+        DarkBramble.createBody("DarkBramble", Sun, 0.0, 20000.0, 875.16, 203.3);
+
+
     }
 
 }
