@@ -37,6 +37,26 @@ public class main {
                 //16 moons all named after mythical sea gods or creatures to match Neptune
                 body Triton = new body();
 
+                //Measurements are in 10's of thousands of kilometers (1:10,000)
+                // orbital velocity is the time in days for a body to complete an orbit of its center
+        Sun.createBody("Sun", null, 0.0, 0.0, 0.0, 69.634);
+        Mercury.createBody("Mercury", Sun, 0.0, 5790.0, 88.0, 0.244);
+        Venus.createBody("Venus", Sun, 0.0, 10800.0, 225.0, 0.60518);
+        Earth.createBody("Earth", Sun, 0.0, 14900.0, 365.0, 0.6378);
+        Moon.createBody("Moon", Earth, 0.0, 38.44, 27.3, 0.174);
+        Mars.createBody("Mars", Sun, 0.0, 22800.0, 687.0, 0.3390);
+        Phobos.createBody("Phobos", Mars, 0.0, 0.9376, 0.319, 0.00111 );
+        Deimos.createBody("Deimos", Mars, 0.0, 2.346, 1.26, 0.00062);
+        Jupiter.createBody("Jupiter", Sun, 0.0, 77800.0, 4333.0, 7.1492);
+        Io.createBody("Io", Jupiter, 0.0, 42.17, 1.77, 0.18213);
+        Europa.createBody("Europa", Jupiter, 0.0, 67.1, 3.55, 0.156);
+        Ganymede.createBody("Ganymede", Jupiter, 0.0, 107.0, 7.15, 0.2631);
+        Callisto.createBody("Callisto", Jupiter, 0.0, 188.27, 16.7, 0.24103);
+        Saturn.createBody("Saturn", Sun, 0.0, 142480.0, 10759.0, 6.0268); //saturn spins so fast it got flattened a bit, so Im using the equatorial radius
+        Titan.createBody("Titan", Saturn, 0.0, 122.187, 15.945, 0.2575);
+        Uranus.createBody("Uranus",Sun, 0.0, 291540.0, 30687.0, 2.5362); //same as saturn, to a lesser degree
+        Neptune.createBody("Neptune", Sun, 0.0, 447040.0, 60190.0, 2.4622);
+        Triton.createBody("Triton", Neptune, 0.0, 35.48, 5.88, 0.135);
     }
 
     public void createOuterWilds(){
