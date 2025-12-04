@@ -16,7 +16,7 @@ public class Simulation {
     }
 
     public void startSimulationEclipse(body body1, body body2){
-        String filename = body1.getName()+body2.getName()+".txt";
+        String filename = body1.getName()+body2.getName()+"eclipse.csv";
         File file = new File(filename);
         Calc calc = new Calc();
         try {
@@ -42,6 +42,22 @@ public class Simulation {
 
 
         } catch (IOException e) {System.out.println("bro.... io exception....");}
+    }
+
+    public void startSimulationDistance(body body1, body body2, int finaldays){
+        String filename = body1.getName()+body2.getName()+"distance.csv";
+        File file = new File(filename);
+        Calc calc = new Calc();
+        try{
+            FileWriter fw = new FileWriter(file);
+            for (int i = 0; i < finaldays; i++) {
+                int distance = calc.findDistance(body1, body2).intValue();
+                fw.write(distance);
+                fw.write("\n");
+                body1.updateAngle();
+                body2.updateAngle();
+            }
+        } catch (IOException ex) {System.out.println("IOException: Error creating file");}
     }
 
 }

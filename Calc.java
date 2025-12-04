@@ -61,4 +61,17 @@ public class Calc {
         }
     }
 
+    public Double findDistance(body body1, body body2) {
+
+        // sqrt of ((x2-x1)^2 plus (y2-y1)^2)
+
+        Double xchange = (findX(body1) - findX(body2) * (findX(body1) - findX(body2)));
+        //find the absolute value of the x distance
+        Double ychange = (findY(body1) - findY(body2) * (findY(body1) - findY(body2)));
+        //find the absolute value of the y distance
+        return Math.sqrt(xchange + ychange);
+        //pythagorean theorem, find the hypotenuse which equals the distance
+
+    }
+
 }
