@@ -2,17 +2,24 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Simulation {
 
     private int currentday = 0;
 
-    public void startSimulationTimed(System system, int finaldays){
+    public void startSimulationTimed(StarSystem system, int finaldays){
         UpdateCall updater = new UpdateCall();
+        try {
+        FileWriter fw = new FileWriter(system.returnFile());
         for (int i = 1; i <= finaldays; i++) {
-            system.printSystemCoords();
+            system.printSystemCoords(fw);
             system.walkList(updater);
         }
+        fw.close();
+        } catch (IOException ex) {System.out.println("IOException");}
     }
 
     public void startSimulationEclipse(body body1, body body2){

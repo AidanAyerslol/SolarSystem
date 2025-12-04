@@ -5,12 +5,19 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
 
+        StarSystem solarsystem = new StarSystem();
+        createSolarSystem(solarsystem);
+        Simulation simulation = new Simulation();
+        simulation.startSimulationTimed(solarsystem, 10000);
+
+
 
     }
 
 
-    public void createSolarSystem() {
+    public static void createSolarSystem(StarSystem solarsystem) {
         //indented to show relationships for clarity
+        solarsystem.createFile("solarsystem.csv");
         body Sun = new body();
             body Mercury = new body();
                 //no moon
@@ -57,9 +64,26 @@ public class main {
         Uranus.createBody("Uranus",Sun, 0.0, 291540.0, 30687.0, 2.5362); //same as saturn, to a lesser degree
         Neptune.createBody("Neptune", Sun, 0.0, 447040.0, 60190.0, 2.4622);
         Triton.createBody("Triton", Neptune, 0.0, 35.48, 5.88, 0.135);
+        solarsystem.addBody(Sun);
+        solarsystem.addBody(Mercury);
+        solarsystem.addBody(Venus);
+        solarsystem.addBody(Earth);
+        solarsystem.addBody(Moon);
+        solarsystem.addBody(Mars);
+        solarsystem.addBody(Phobos);
+        solarsystem.addBody(Deimos);
+        solarsystem.addBody(Jupiter);
+        solarsystem.addBody(Europa);
+        solarsystem.addBody(Callisto);
+        solarsystem.addBody(Saturn);
+        solarsystem.addBody(Titan);
+        solarsystem.addBody(Uranus);
+        solarsystem.addBody(Neptune);
+        solarsystem.addBody(Triton);
     }
 
-    public void createOuterWilds(){
+    public static void createOuterWilds(StarSystem outerwilds){
+        outerwilds.createFile("outerwilds.csv");
         body Sun = new body();
             //The ash and ember twin are coorbital, spiraling around a point in space between the two because they have similar mass
             body HourGlassTwinsOrbit = new body();
@@ -91,6 +115,17 @@ public class main {
         GiantsDeep.createBody("GiantsDeep", Sun, 0.0, 16457.587, 650.0, 500.0);
         ProbeCannon.createBody("ProbeCannon", GiantsDeep, 0.0, 1000.0, 50.0, 15.0);
         DarkBramble.createBody("DarkBramble", Sun, 0.0, 20000.0, 875.16, 203.3);
+        outerwilds.addBody(Sun);
+        outerwilds.addBody(HourGlassTwinsOrbit);
+        outerwilds.addBody(AshTwin);
+        outerwilds.addBody(EmberTwin);
+        outerwilds.addBody(TimberHearth);
+        outerwilds.addBody(Attlerock);
+        outerwilds.addBody(BrittleHollow);
+        outerwilds.addBody(HollowsLantern);
+        outerwilds.addBody(GiantsDeep);
+        outerwilds.addBody(ProbeCannon);
+        outerwilds.addBody(DarkBramble);
 
 
     }
