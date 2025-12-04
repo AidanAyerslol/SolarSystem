@@ -40,7 +40,7 @@ public class StarSystem {
         YCall y = new YCall();
         try {
             if (root.getBody() != null) {
-                fw.write(root.getBody().getName() + "," + x.action(root.getBody()) + "," + y.action(root.getBody()));
+                fw.write(root.getBody().getName() + "," + x.action(root.getBody()) + "," + y.action(root.getBody())+",");
             }
             if (root.next() != null){
                 printSystemCoords(root.next(), fw);
