@@ -9,16 +9,22 @@ public class System {
     private Node sun = new Node();
     File systemcoords;
 
+    //do not forget to create a file when making a system, a smarter man than me would idiot-proof this. Alas, a smarter man I am not
     public void createFile(String directory){
         systemcoords= new File(directory);
     }
 
+    public void walkList(Call call){
+        walkList(call, sun);
+    }
     private void walkList(Call call, Node root){
         call.action(root.getBody());
         walkList(call, root.next);
     }
 
-
+    public void printSystemCoords(){
+        printSystemCoords(sun);
+    }
     private void printSystemCoords(Node root){
 
         //will print something along the lines of "Sun, 0, 0, Mercury, 1, 0, Venus, 2, 0, Earth, 3, 0, \n" into a csv file
