@@ -74,4 +74,18 @@ public class Calc {
 
     }
 
+    public Double findAngle(body body){
+        if (body.getParent() == null) {
+            return 0.0;
+        }
+        else if (body.getParent().getParent() == null) {
+            return body.getAngle();
+        }
+        else {
+            Double thetaAminusB = body.getAngle();
+            Double thetaB = body.getParent().getAngle();
+            return ((2 * thetaAminusB) - thetaB - 3.1415);
+        }
+    }
+
 }

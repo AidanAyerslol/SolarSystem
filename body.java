@@ -55,7 +55,11 @@ public class body {
 
     public void updateAngle(){
         Double newangle = angle + (Math.PI * 2) / velocity;
-        angle = newangle;
+        if (newangle > 2 * Math.PI){
+            angle = newangle -  2 * Math.PI;
+        }
+        else {angle = newangle;}
+
     }
 
 }

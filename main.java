@@ -5,12 +5,41 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
 
-        StarSystem solarsystem = new StarSystem();
-        createSolarSystem(solarsystem);
-        Simulation simulation = new Simulation();
-        simulation.startSimulationTimed(solarsystem, 10000);
+// trace solar system
+//        StarSystem solarsystem = new StarSystem();
+//        createSolarSystem(solarsystem);
+//        Simulation simulation = new Simulation();
+//        simulation.startSimulationTimed(solarsystem, 10000);
 
+// trace outer wilds
+//        StarSystem outerwilds = new StarSystem();
+//        createOuterWilds(outerwilds);
+//        Simulation simulation = new Simulation();
+//        simulation.startSimulationTimed(outerwilds, 1320);
 
+// find distance between Earth and Europa, per request of Jonathan Southard
+//        Simulation simulation = new Simulation();
+//        body Sun = new body();
+//        body Earth = new body();
+//        body Jupiter = new body();
+//        body Europa = new body();
+//
+//        Earth.createBody("Earth", Sun, 0.0, 14900.0, 365.0, 0.6378);
+//        Sun.createBody("Sun", null, 0.0, 0.0, 0.0, 69.634);
+//        Jupiter.createBody("Jupiter", Sun, 0.0, 77800.0, 4333.0, 7.1492);
+//        Europa.createBody("Europa", Jupiter, 0.0, 67.1, 3.55, 0.156);
+//        simulation.startSimulationDistance(Earth, Europa, 5000);
+
+// find how long it tastes jupiter to align with Earth
+//        Simulation simulation = new Simulation();
+//        body Sun = new body();
+//        body Earth = new body();
+//        body Moon = new body();
+//
+//        Earth.createBody("Earth", Sun, 0.0, 14900.0, 365.0, 0.6378);
+//        Sun.createBody("Sun", null, 0.0, 0.0, 0.0, 69.634);
+//        Moon.createBody("Moon", Earth, 0.0, 38.44, 27.3, 0.174);
+//        simulation.startSimulationEclipse(Earth, Moon);
 
     }
 

@@ -33,15 +33,15 @@ public class Simulation {
             body2.updateAngle();
             currentday++;
             //while both bodies remain not in-line, write their angles to a csv and iterate time
-            while (body1.getAngle() != body2.getAngle()) {
-                fw.write((int) (body1.getAngle()+body2.getAngle()));
+            while (Math.abs(calc.findAngle(body1) - calc.findAngle(body2)) >  0.01745) {
+                fw.write(String.valueOf(calc.findAngle(body1)+","+calc.findAngle(body2)));
                 fw.write("\n");
                 body1.updateAngle();
                 body2.updateAngle();
                 currentday++;
             }
             //record both bodies angles one more time, should be in-line, then close the writer
-            fw.write((int) (body1.getAngle()+body2.getAngle()));
+            fw.write(String.valueOf(calc.findAngle(body1)+","+calc.findAngle(body2)));
             fw.write("\n"+"Days taken to eclipse:,"+currentday);
             fw.close();
             System.out.println(currentday);
@@ -58,8 +58,8 @@ public class Simulation {
         try{
             FileWriter fw = new FileWriter(file);
             for (int i = 0; i < finaldays; i++) {
-                int distance = calc.findDistance(body1, body2).intValue();
-                fw.write(distance);
+                Double distance = calc.findDistance(body1, body2);
+                fw.write(String.valueOf(distance));
                 fw.write("\n");
                 body1.updateAngle();
                 body2.updateAngle();
